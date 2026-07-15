@@ -140,11 +140,10 @@ main {
 }
 
 .himg-fluid{
-    transition: all .4s ease;
-    cursor: pointer;
+    transition: transform .3s ease, box-shadow .s ease;
 }
 
 .img-fluid:hover{
-    transform: scale(1.05) translateY(-8px);
-    box-shadow: 0 20px 45px rgba(0,0,0,.30);
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
 }
