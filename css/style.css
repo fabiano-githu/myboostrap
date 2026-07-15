@@ -44,8 +44,7 @@ body::before {
     font-size: 73%;
 }
 
-header,
-footer {
+header, footer {
     background-color: #0A2342 !important;
 }
 
@@ -57,7 +56,8 @@ footer {
 .dropdown-item:hover,
 .dropdown-item:focus {
     color: var(--bs-info);
-    background-color: rgb(10, 35, 66); /* remove o fundo cinza padrão do hover, se quiser só mudar o texto */
+    background-color: rgb(10, 35, 66);
+    /* remove o fundo cinza padrão do hover, se quiser só mudar o texto */
 }
 
 .logged img,
@@ -72,8 +72,9 @@ footer {
 .unlogged .dropdown-item:focus,
 .logged .dropdown-item:hover,
 .logged .dropdown-item:focus {
-   color: var(--bs-info);
-    background-color:rgb(10, 35, 66); /* remove o fundo cinza padrão do hover, se quiser só mudar o texto */
+    color: var(--bs-info);
+    background-color: rgb(10, 35, 66);
+    /* remove o fundo cinza padrão do hover, se quiser só mudar o texto */
 }
 
 
@@ -97,8 +98,8 @@ footer {
     background-color: var(--bg-black-blueoil);
 }
 
-.navbar{
-    background-color:rgb(10, 35, 66)!important; 
+.navbar {
+    background-color: rgb(10, 35, 66) !important;
 }
 
 
@@ -131,4 +132,19 @@ footer {
 main {
 
     padding-top: 173px
+}
+
+#wrap footer a {
+    font-size: 1.8rem;
+
+}
+
+.himg-fluid{
+    transition: all .4s ease;
+    cursor: pointer;
+}
+
+.img-fluid:hover{
+    transform: scale(1.05) translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,.30);
 }
