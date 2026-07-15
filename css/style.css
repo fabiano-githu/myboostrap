@@ -147,3 +147,31 @@ main {
     transform: scale(1.03);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
 }
+
+/* css/style.css */
+.carousel-item img {
+    height: 500px;      /* ajuste como quiser */
+    object-fit: cover;  /* corta a imagem mantendo proporção, sem esticar */
+    width: 100%;
+}
+
+.carousel-indicators button {
+    opacity: 0.5;
+}
+.carousel-indicators button.active {
+    opacity: 1;
+}
+
+/* css/style.css */
+.carousel-indicators button {
+    width: 14px !important;
+    height: 14px !important;
+    border-radius: 50%;
+    background-color: var(--bs-info);
+    opacity: 0.5;
+    margin: 0 6px !important;
+}
+
+.carousel-indicators button.active {
+    opacity: 1;
+}
