@@ -9,6 +9,7 @@
     <!-- Importa o framework Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <!-- ligar CSS ao html-->
     <link rel="stylesheet" href="css/style.css">
 
@@ -17,129 +18,370 @@
 </head>
 
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 
-    <div id="wrap">
+    <div id="wrap" class="d-flex flex-column flex-grow-1">
 
-        <header class="header">
-            <!-- Jumbotron -->
-            <div class="container p-2 text-white d-flex flex-column flex-sm-row">
+        <!-- ===================================================================
+             CORREÇÃO: header e nav agora vivem dentro de UM único wrapper fixo
+             (#fixedTop), em vez de cada um usar "fixed-top" separadamente.
+             Antes, os dois ficavam fixados em top:0 ao mesmo tempo e, em telas
+             menores, o header crescia (flex-column) e cobria a nav (que tinha
+             z-index menor). Agora eles empilham em fluxo normal dentro do
+             wrapper, então a nav sempre fica logo abaixo do header,
+             não importa a altura que o header assuma.
+        =================================================================== -->
+        <div id="fixedTop" class="z-3">
 
-                <div class="d-flex align-items-center gap-2">
-                    <a href="index.html">
-                        <img class="rounded d-block logotipo" src="img/11539813-removebg-preview.png"
-                            alt="Logotipo do MyBootstrap">
+            <header class="header">
+                <!-- Jumbotron -->
+                <div class="container p-2 text-white d-flex flex-column flex-sm-row">
+
+                    <div class="d-flex align-items-center gap-2">
+                        <a href="index.html">
+                            <img class="rounded d-block logotipo" src="img/11539813-removebg-preview.png"
+                                alt="Logotipo do MyBootstrap">
+                        </a>
+
+                        <h1 class="text-info text-center fw-bold">
+                            ChavierWebMídia
+                            <small class="d-block text-white fs-5 fw-light mt-2">
+                                Sites Profissionais • Landing Pages • Sistemas Web
+                            </small>
+                        </h1>
+
+                    </div>
+
+
+                    <!-- Se não tem logado -->
+                    <div class="unlogged dropdown d-none align-items-center gap-2 justify-content-center p-2 ms-sm-auto">
+                        <img class="rounded-circle" src="img/11765273.png" width="10" height="10" alt="Logue-se!">
+                        <a href="javascript: void(0)" class="dropdown-toggle text-info " data-bs-toggle="dropdown">
+                            Logue-se!
+                        </a>
+                        <ul class="dropdown-menu bg-info mt-2 border border-dark">
+                            <li><a class="dropdown-item text-white bg-info" href="javascript: void(0)"
+                                    data-bs-toggle="modal" data-bs-target="#myModal">Fazer login</a></li>
+                            <li><a class="dropdown-item text-white bg-info " href="javascript: void(0)">Cadastre-se</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Se o usuário está logado -->
+                    <div class="logged dropdown d-flex  align-items-center gap-2 justify-content-center p-2 ms-sm-auto">
+                        <img class="rounded-circle"
+                            src="img/retrato-de-um-jovem-com-uma-expressao-engracada-no-rosto_947073-6010.jpg"
+                            alt="Joca da Silva">
+                        <a href="javascript: void(0)" class="dropdown-toggle text-info" data-bs-toggle="dropdown">
+                            Joca da Silva
+                        </a>
+                        <ul class="dropdown-menu bg-info mt-2 border border-dark  ">
+                            <li><a class="dropdown-item text-white" href="javascript: void(0)">Ver perfil</a></li>
+                            <li><a class="dropdown-item text-white" href="javascript: void(0)">Sair / Logout</a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </header>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark border border-info">
+                <div class="container">
+
+                    <a class="navbar-brand p-0" href="index.html" data-bs-toggle="tooltip"
+                        title="MyBootstrap - Melhores Designs" data-bs-placement="bottom">
+
+                        <img class="rounded" src="img/image.png" alt="Logotipo de MyBootstrap">
                     </a>
 
-                    <h1 class="text-info text-center fw-bold">
-                        ChavierWebMídia
-                        <small class="d-block text-white fs-5 fw-light mt-2">
-                            Sites Profissionais • Landing Pages • Sistemas Web
-                        </small>
-                    </h1>
+
+                    <!-- Botão celular -->
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false"
+                        aria-label="Abrir menu">
+
+                        <span class="navbar-toggler-icon"></span>
+
+                    </button>
+
+
+                    <!-- Menu -->
+                    <div class="collapse navbar-collapse" id="mynavbar">
+
+                        <ul class="navbar-nav me-auto">
+
+                            <li class="nav-item ">
+                                <a class="nav-link text-black-blueoil " href="index.html">
+                                    Ínicio
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#conteudo">
+                                    Conteúdo
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+
+                                    Sobre
+
+                                </a>
+
+
+                                <ul class="dropdown-menu bg-info mt-2 border border-dark">
+
+                                    <li>
+                                        <a class="dropdown-item text-white" href="#sobre_o_site">
+                                            Sobre o Site
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item text-white " href="#sobre_o_autor">
+                                            Sobre o Autor
+                                        </a>
+                                    </li>
+
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+
+                                    <li>
+                                        <a class="dropdown-item text-white " href="#faca_contato">
+                                            Faça Contato
+                                        </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a class="dropdown-item text-white " href="#privacidade">
+                                            Políticas de Privacidade
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
+                        </ul>
+
+
+                        <!-- Pesquisa -->
+                        <form class="d-flex mt-2 mt-lg-0 ms-0 ms-lg-2" role="search">
+                            <div class="input-group">
+                            <input type="text" class="form-control" id="inputPesquisa" placeholder="Procurar..." aria-label="Procurar">                                <button class="btn btn-info" type="submit">
+                                    <i class="bi bi-search "></i>
+                                </button>
+                            </div>
+                        </form>
+
+
+                    </div>
 
                 </div>
+            </nav>
+
+        </div>
 
 
-                <!-- Se não tem logado -->
-                <div class="unlogged dropdown d-flex align-items-center gap-2 justify-content-center p-2 ms-sm-auto">
-                    <img class="rounded-circle" src="img/11765273.png" alt="Logue-se!">
-                    <a href="javascript: void(0)" class="dropdown-toggle text-info " data-bs-toggle="dropdown">
-                        Logue-se!
-                    </a>
-                    <ul class="dropdown-menu bg-info border-white">
-                        <li><a class="dropdown-item text-white bg-info" href="javascript: void(0)" data-bs-toggle="modal"
-                                data-bs-target="#myModal">Fazer login</a></li>
-                        <li><a class="dropdown-item text-white bg-info " href="javascript: void(0)">Cadastre-se</a></li>
-                    </ul>
-                </div>
-
-                <!-- Se o usuário está logado -->
-                <div class="logged dropdown d-none align-items-center gap-2 justify-content-center p-2 ms-sm-auto">
-                    <img class="rounded-circle"
-                        src="img/retrato-de-um-jovem-com-uma-expressao-engracada-no-rosto_947073-6010.jpg"
-                        alt="Joca da Silva">
-                    <a href="javascript: void(0)" class="dropdown-toggle text-info" data-bs-toggle="dropdown">
-                        Joca da Silva
-                    </a>
-                    <ul class="dropdown-menu ">
-                        <li><a class="dropdown-item text-info" href="javascript: void(0)">Ver perfil</a></li>
-                        <li><a class="dropdown-item text-info" href="javascript: void(0)">Sair / Logout</a></li>
-                    </ul>
-
-                </div>
-
-            </div>
-        </header>
-
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-            <div class="container">
-                <a class="navbar-brand p-0" href="index.html" data-bs-toggle="tooltip"
-                    title="MyBootstrap - Melhores Designs" data-bs-placement="bottom">
-                    <img class="rounded" src="img/image.png" alt="Logotipo de MyBootstrap">
-                </a>
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#mynavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mynavbar">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Ínicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#conteudo">Conteúdo</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown">Sobre</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#sobre_o_site">Sobre o Site</a></li>
-                                <li><a class="dropdown-item" href="#sobre_o_autor">Sobre o Autor</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#faca_contato">Faça Contato</a></li>
-                                <li><a class="dropdown-item" href="#privacidade">Políticas de Privacidade</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex mt-2 mt-sm-0 ms-0 ms-sm-2">
-                        <input class="form-control me-2" type="text" placeholder="Procurar...">
-                        <button class="btn btn-primary" type="button"><i class="bi bi-search"></i></button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-
-
-       <main>
-            <div class="container">
+        <main class="flex-grow-1 " id="mainContent">
+            <div class="container  ">
                 <div class="row">
-                    <section class="col-md-8 col-lg-9 bg-body pt-3">
-                        <h2>Título</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque obcaecati reprehenderit ipsa
-                            placeat, vitae soluta accusantium dolores rem possimus ut aliquam consectetur ab nobis,
-                            dolore
-                            veniam eligendi iure, facilis voluptates.</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis asperiores laborum repellat
-                            iusto, soluta voluptatem distinctio, mollitia quo optio, nostrum impedit inventore quidem
-                            velit
-                            fugiat aperiam quos? Recusandae, ut quo.</p>
-                    </section>
+                    <main class="flex-grow-1 pt-5 mt-5">
 
-                    <aside class="col-md-4 col-lg-3 bg-body-secondary pt-3">
-                        <h3>Veja também</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita necessitatibus sint rem
-                            sed.
-                        </p>
-                    </aside>
+                        <div class="container">
+
+                            <div class="row align-items-center py-5">
+
+                                <!-- Conteúdo principal -->
+                                <section class="col-lg-7">
+
+                                    <span class="badge bg-info text-dark mb-3">
+                                        Desenvolvimento Web Profissional
+                                    </span>
+
+                                    <h1 class="display-4 fw-bold">
+                                        Transformamos ideias em
+                                        <span class="text-info">
+                                            experiências digitais
+                                        </span>
+                                    </h1>
+
+                                    <p class="lead text-secondary mt-3">
+                                        Criamos sites modernos, landing pages de alta conversão
+                                        e sistemas web personalizados para empresas que desejam
+                                        crescer no mundo digital.
+                                    </p>
+
+                                    <div class="mt-4">
+
+                                        <a href="#servicos" class="btn btn-info btn-lg me-2">
+                                            Conheça nossos serviços
+                                        </a>
+
+                                        <a href="#contato" class="btn btn-outline-dark btn-lg">
+                                            Solicitar orçamento
+                                        </a>
+
+                                    </div>
+
+                                </section>
+
+
+                                <!-- Imagem / destaque -->
+                                <aside class="col-lg-5 text-center mt-4 mt-lg-0">
+
+                                    <img src="img/35bdeb8d06e9aeec524f4f741031b826.jpg" class="img-fluid rounded shadow"
+                                        alt="Desenvolvimento Web">
+
+                                </aside>
+
+                            </div>
+
+
+                            <!-- Serviços -->
+
+                            <section id="servicos" class="py-5">
+
+                                <h2 class="text-center fw-bold mb-4">
+                                    Nossos Serviços
+                                </h2>
+
+                                <div class="row g-4">
+
+
+                                    <div class="col-md-4">
+
+                                        <div class="card h-100 shadow border-0">
+
+                                            <div class="card-body text-center">
+
+                                                <i class="bi bi-window fs-1 text-info"></i>
+
+                                                <h3 class="h5 mt-3">
+                                                    Sites Profissionais
+                                                </h3>
+
+                                                <p class="text-secondary">
+                                                    Sites responsivos, rápidos e preparados
+                                                    para apresentar sua marca com qualidade.
+                                                </p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="col-md-4">
+
+                                        <div class="card h-100 shadow border-0">
+
+                                            <div class="card-body text-center">
+
+                                                <i class="bi bi-phone fs-1 text-info"></i>
+
+                                                <h3 class="h5 mt-3">
+                                                    Landing Pages
+                                                </h3>
+
+                                                <p class="text-secondary">
+                                                    Páginas criadas para gerar contatos,
+                                                    vendas e aumentar seus resultados.
+                                                </p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                    <div class="col-md-4">
+
+                                        <div class="card h-100 shadow border-0">
+
+                                            <div class="card-body text-center">
+
+                                                <i class="bi bi-code-slash fs-1 text-info"></i>
+
+                                                <h3 class="h5 mt-3">
+                                                    Sistemas Web
+                                                </h3>
+
+                                                <p class="text-secondary">
+                                                    Soluções personalizadas para automatizar
+                                                    processos da sua empresa.
+                                                </p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </section>
+
+
+                            <!-- Sobre -->
+
+                            <section class="bg-dark text-white rounded p-5 my-5">
+
+                                <div class="row align-items-center">
+
+                                    <div class="col-lg-8">
+
+                                        <h2 class="fw-bold">
+                                            Tecnologia que conecta negócios e pessoas
+                                        </h2>
+
+                                        <p class="mt-3">
+                                            Na ChavierWebMídia desenvolvemos soluções digitais
+                                            utilizando tecnologias modernas para criar projetos
+                                            profissionais, elegantes e eficientes.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="col-lg-4 text-center">
+
+                                        <a href="#contato" class="btn btn-info btn-lg">
+                                            Vamos criar seu projeto
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+                        </div>
+
+                    </main>
+
+                  
                 </div>
             </div>
         </main>
 
-        <footer>
+        <footer class="bg-dark text-white text-center p-3">
             FOOTER
         </footer>
 
@@ -194,10 +436,18 @@
         </div>
     </div>
 
+
+
+
     <!-- Importa o framework Bootstrap 5 JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+
+    <script src="js/script.js"></script>
+
+
+
 </body>
 
 </html>

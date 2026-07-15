@@ -1,83 +1,134 @@
 /* Isso é um comentário em CSS */
-   /* Cores personalizadas */
-        :root {
-            --text-black-blueoil: #004953;
-            --bg-black-blueoil: #39bfd1;
-        }
+/* Cores personalizadas */
+:root {
+    --text-black-blueoil: #004953;
+    --bg-black-blueoil: #39bfd1;
+}
 
-        body {
-            background-color: rgb(80, 170, 223);
-            background-attachment: fixed;
-            background-image: url("img/35bdeb8d06e9aeec524f4f741031b826.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+body {
+    background-color: rgb(80, 170, 223);
+    background-attachment: fixed;
+    background-image: url("../img/4e8cdfc3726a39ba3546cc247d2ad42c.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 900px;
+}
 
-        #wrap header .logotipo {
-            height: 100px;
-            width: auto;
-        }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: -1;
+}
 
-        #wrap header small {
-            font-size: 73%;
-        }
+.header {
+    top: 0;
+}
 
-        header, footer{
-            background-color: #0A2342 !important;
-        }
 
-        .logged img,
-        .unlogged img {
-            height: 2rem;
-            width: 2rem;
-        }
+#fixedTop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 
-        @media screen and (min-width: 576px) {
+#wrap header .logotipo {
+    height: 100px;
+    width: auto;
+}
 
-            .logged img,
-            .unlogged img {
-                height: 4rem;
-                width: 4rem;
-            }
-        }
+#wrap header small {
+    font-size: 73%;
+}
 
-        .logged .dropdown-toggle,
-        .unlogged .dropdown-toggle {
-            color: var(--text-black-blueoil);
-            text-decoration: none;
-        }
+header,
+footer {
+    background-color: #0A2342 !important;
+}
 
-        .text-black-blueoil {
-            color: var(--text-black-blueoil);
-        }
+#inputPesquisa::placeholder {
+    color: var(--bs-info);
+    opacity: 1;
+}
 
-        .bg-black-blueoil {
-            background-color: var(--bg-black-blueoil);
-        }
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: var(--bs-info);
+    background-color: rgb(10, 35, 66); /* remove o fundo cinza padrão do hover, se quiser só mudar o texto */
+}
 
-        .navbar-brand img {
-            height: 2.5rem;
-            width: auto;
-        }
+.logged img,
+.unlogged img {
+    height: 2rem;
+    width: 2rem;
+}
 
-        .navbar-brand {
-            opacity: 0;
-            /* visibility: hidden; */
-            display: none;
-            transition: opacity .3s ease;
-        }
+/* Hover para os dropdowns do header (logado e deslogado) */
 
-        .navbar-brand.show {
-            opacity: 1;
-            /* visibility: visible; */
-            display: block;
-        }
+.unlogged .dropdown-item:hover,
+.unlogged .dropdown-item:focus,
+.logged .dropdown-item:hover,
+.logged .dropdown-item:focus {
+   color: var(--bs-info);
+    background-color:rgb(10, 35, 66); /* remove o fundo cinza padrão do hover, se quiser só mudar o texto */
+}
 
-        .nav-link{
-            color: rgba(88, 186, 235) !important;
-        }
 
-        #wrap header .dropdown-menu {
-            z-index: 10000;
-        }
+
+@media screen and (min-width: 576px) {
+
+    .logged img,
+    .unlogged img {
+        height: 2rem;
+        width: 2rem;
+    }
+}
+
+
+
+.text-black-blueoil {
+    color: var(--text-black-blueoil);
+}
+
+.bg-black-blueoil {
+    background-color: var(--bg-black-blueoil);
+}
+
+.navbar{
+    background-color:rgb(10, 35, 66)!important; 
+}
+
+
+.navbar-brand img {
+    height: 2.5rem;
+    width: auto;
+}
+
+.navbar-brand {
+    opacity: 0;
+    /* visibility: hidden; */
+    display: none;
+    transition: opacity .3s ease;
+}
+
+.navbar-brand.show {
+    opacity: 1;
+    /* visibility: visible; */
+    display: block;
+}
+
+.nav-link {
+    color: rgba(88, 186, 235) !important;
+}
+
+#wrap header .dropdown-menu {
+    z-index: 10000;
+}
+
+main {
+
+    padding-top: 173px
+}
