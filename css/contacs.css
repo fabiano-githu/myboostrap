@@ -1,0 +1,105 @@
+/* ====================== MAIN - CONTATOS ====================== */
+
+main {
+    /* Ajustado para descer o conteúdo perfeitamente abaixo do cabeçalho fixo */
+    padding-top: 200px; 
+    padding-bottom: 80px;
+    margin-top: 200px;
+}
+
+/* Corrigido o erro de sintaxe adicionando o max-width */
+main .container {
+    max-width: 1200px;
+    height: 900px;
+}
+
+/* Título */
+main h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0A2342;
+    margin-bottom: 1.5rem;
+}
+
+/* Texto introdutório */
+main .lead {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+}
+
+/* Formulário */
+.form-floating {
+    margin-bottom: 1.2rem;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 14px 20px;
+}
+
+.form-control:focus {
+    border-color: #39bfd1;
+    box-shadow: 0 0 0 0.25rem rgba(57, 191, 209, 0.25);
+}
+
+/* Caixa lateral (informações) */
+.bg-light {
+    background-color: #faf8fa !important;
+    border-radius: 16px;
+    padding: 35px 25px;
+    height: 100%;
+    border-left: 6px solid #39bfd1;
+}
+
+.bg-light h4 {
+    color: #0A2342;
+    margin-bottom: 1.5rem;
+}
+
+/* ====================== RESPONSIVIDADE ====================== */
+
+/* Quando as colunas se empilham (abaixo de 992px de largura) */
+@media (max-width: 992px) {
+    main {
+        padding-top: 150px; /* Ajuste para o tamanho do header em tablets */
+        padding-bottom: 60px;
+    }
+    
+    main h2 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    
+    main .lead {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Adiciona margem acima da barra lateral para ela não grudar no formulário */
+    .bg-light {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding-top: 140px; /* Ajuste para telas médias */
+    }
+    
+    .bg-light {
+        margin-top: 30px;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    main {
+        padding-top: 160px; /* Garante que em celulares pequenos o menu de duas linhas não cubra o título */
+    }
+    
+    main h2 {
+        font-size: 1.9rem;
+    }
+}
