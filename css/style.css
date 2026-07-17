@@ -139,8 +139,8 @@ main {
 
 }
 
-.himg-fluid{
-    transition: transform .3s ease, box-shadow .s ease;
+.himg-fluid {
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .img-fluid:hover{
@@ -174,4 +174,47 @@ main {
 
 .carousel-indicators button.active {
     opacity: 1;
+}
+
+
+
+
+/* ==================== ESTILO BASE COM TRANSIÇÃO PREMIUM ==================== */
+
+.contatos, .aside {
+    background-color: #0A2342 !important;
+    overflow: hidden;
+    margin-top: 100px;
+    
+    /* Borda sutil inicial */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    
+    /* Configuração de aceleração de hardware para suavidade extrema */
+    will-change: transform, box-shadow, border-color;
+    transform: translateY(0) scale(1);
+    
+    /* Curva de transição de grife (cubic-bezier) usada em interfaces modernas */
+    transition: 
+        transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+        border-color 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.aside {
+    color: #f3f1f1;
+}
+
+/* ==================== O HOVER PREMIUM (NOS DOIS) ==================== */
+
+.contatos:hover, .aside:hover {
+    /* Eleva o elemento no eixo Y e dá um zoom levíssimo (3D effect) */
+    transform: translateY(-10px) scale(1.01);
+    
+    /* Acende a borda com a cor destaque do seu site */
+    border-color: #39bfd1 !important;
+    
+    /* Sombra projetada + Brilho neon (glow) expandindo para as pontas arredondadas */
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.45), 
+        0 0 30px rgba(57, 191, 209, 0.25) !important;
 }

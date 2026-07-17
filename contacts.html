@@ -207,72 +207,116 @@
         </div>
 
 
-        <main class="flex-grow-1 d-flex mt-2 mb-2">
-            <div class="container d-flex">
-                <div class="row flex-grow-1">
-                    <section class="col-md-8 col-lg-9 bg-body pt-3">
-                        <h2>Faça Contato</h2>
-                        <p>Preencha os campos abaixo para entrar em contato com a equipe do site.</p>
+        <!-- ==================== MAIN - CONTATO PREMIUM ==================== -->
+        <main class="flex-grow-1 d-flex mt-5 pt-5 ">
+            <div class="container d-flex align-items-center">
+                <div class="row flex-grow-1 g-4">
 
-                        <div class="w-100 mx-auto" id="contactForm">
-                            <form action="" method="get" class="was-validated">
+                    <!-- Seção do Formulário Premium (Vidro/Escuro) -->
+                    <section class="contatos col-md-8 col-lg-9 bg-dark text-white p-4 MT-5 rounded-5 shadow-lg border border-secondary border-opacity-25 form-premium">
+                        <h2 class="fw-bold text-info mb-2">Faça Contato</h2>
+                        <p class="text-white mb-4">Preencha os campos abaixo para entrar em contato com a nossa
+                            equipe.</p>
 
-                                <div class="form-floating mb-3 mt-3">
-                                    <input type="text" class="form-control" id="contactName" name="name" required
-                                        minlength="2">
-                                    <label for="contactName">Nome:</label>
-                                    <div class="valid-feedback">&nbsp;</div>
-                                    <div class="invalid-feedback">Preencha seu nome.</div>
+                        <div class="w-100 mx-auto">
+                            <form action="" method="post" id="contactForm" novalidate>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text"
+                                                class="form-control bg-transparent text-white border-info border-opacity-50"
+                                                id="contactName" name="name" placeholder="Nome" required minlength="2">
+                                            <label class="text-white-50" for="contactName">Nome</label>
+                                            <div class="invalid-feedback text-danger">Por favor, insira seu nome.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="email"
+                                                class="form-control bg-transparent text-white border-info  border-opacity-50"
+                                                id="contactEmail" name="email" placeholder="E-mail" required>
+                                            <label class="text-white-50" for="contactEmail">E-mail</label>
+                                            <div class="invalid-feedback text-danger">Por favor, insira um e-mail
+                                                válido.</div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="contactEmail" name="email" required>
-                                    <label for="contactEmail">E-mail:</label>
-                                    <div class="valid-feedback">&nbsp;</div>
-                                    <div class="invalid-feedback">Preencha seu e-mail.</div>
+                                    <input type="text"
+                                        class="form-control bg-transparent text-white border-info  border-opacity-50"
+                                        id="contactSubject" name="subject" placeholder="Assunto" required minlength="3">
+                                    <label class="text-white-50" for="contactSubject">Assunto</label>
+                                    <div class="invalid-feedback text-danger">Por favor, insira o assunto.</div>
                                 </div>
 
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="contactSubject" name="subject" required
-                                        minlength="3">
-                                    <label for="contactSubject">Assunto:</label>
-                                    <div class="valid-feedback">&nbsp;</div>
-                                    <div class="invalid-feedback">Preencha o assunto.</div>
-                                </div>
-
-                                <div class="form-floating mb-3">
-                                    <textarea class="form-control" id="contactMessage" name="message" required
-                                        minlength="4"></textarea>
-                                    <label for="contactMessage">Mensagem:</label>
-                                    <div class="valid-feedback">&nbsp;</div>
-                                    <div class="invalid-feedback">Preencha a mensagem.</div>
+                                <div class="form-floating mb-4">
+                                    <textarea
+                                        class="form-control bg-transparent text-white border-info  border-opacity-50"
+                                        id="contactMessage" name="message" placeholder="Mensagem" style="height: 150px;"
+                                        required minlength="4"></textarea>
+                                    <label class="text-white-50" for="contactMessage">Mensagem</label>
+                                    <div class="invalid-feedback text-danger">Sua mensagem precisa ter pelo menos 4
+                                        caracteres.</div>
                                 </div>
 
                                 <div>
-                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                    <button type="submit"
+                                        class="btn btn-info btn-sm px-5 text-dark fw-bold btn-submit-premium">
+                                        Enviar Mensagem <i class="bi bi-send-fill ms-2"></i>
+                                    </button>
                                 </div>
 
                             </form>
                         </div>
-
                     </section>
 
-                    <aside class="col-md-4 col-lg-3 bg-body-secondary pt-3">
-                        <h3>+ Fale conosco</h3>
-                        <ul class="list-unstyled lh-lg mx-auto">
-                            <li><a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i>
-                                    Facebook</a></li>
-                            <li><a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i>
-                                    Facebook</a></li>
-                            <li><a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i>
-                                    Facebook</a></li>
-                            <li><a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i>
-                                    Facebook</a></li>
-                        </ul>
+                    <!-- Barra Lateral Premium (Informações com efeito hover) -->
+                    <aside class="aside col-md-4 col-lg-3 bg-info text-info  p-4 p-md-5 rounded-5 shadow-lg d-flex flex-column justify-content-between border border-info border-opacity-25 aside-premium">
+                        <div>
+                            <h3 class="fw-extrabold mb-3 text-uppercase tracking-wider">Conecte-se</h3>
+                            <p class="small opacity-10 mb-4">Estamos disponíveis em várias plataformas para melhor te
+                                atender.</p>
+
+                            <ul class="list-unstyled lh-lg premium-links">
+                                <li class="mb-3">
+                                    <a href="https://facebook.com" target="_blank"
+                                        class="d-flex align-items-center text-info text-decoration-none fw-semibold link-hover-effect">
+                                        <i class="bi bi-facebook fs-4 me-3"></i> Facebook
+                                    </a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="https://instagram.com" target="text-info _blank"
+                                        class="d-flex align-items-center text-info  text-decoration-none fw-semibold link-hover-effect">
+                                        <i class="bi bi-instagram fs-4 me-3"></i> Instagram
+                                    </a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="https://linkedin.com" target="_blank"
+                                        class="d-flex align-items-center text-info  text-decoration-none fw-semibold link-hover-effect">
+                                        <i class="bi bi-linkedin fs-4 me-3"></i> LinkedIn
+                                    </a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="https://wa.me/55999999999" target="_blank"
+                                        class="d-flex align-items-center text-info  text-decoration-none fw-semibold link-hover-effect">
+                                        <i class="bi bi-whatsapp fs-4 me-3"></i> WhatsApp
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-4 border-top border-dark border-opacity-10 mt-4">
+                            <span class="small fw-bold opacity-75"><i class="bi bi-clock-fill me-2"></i> Resposta rápida
+                                de segunda a sexta</span>
+                        </div>
                     </aside>
+
                 </div>
             </div>
         </main>
+
 
         <footer class="text-light border border-info">
             <div class="container d-flex justify-content-between align-items-center text-info">
